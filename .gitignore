@@ -5,3 +5,43 @@ application.linux64
 application.windows32
 application.windows64
 application.macosx
+
+float posY = 250;
+float posX = 0;
+float posZ = -100;
+int dirY = 5;
+int dirX = 5;
+int dirZ = 5;
+
+
+void setup(){
+  size(500,500,P3D);
+}
+void draw(){
+  background(0,0,0);
+  fill(255,255,255);
+  translate(posX,posY,posZ);
+  sphere(30);
+  posY = posY + dirY;
+  posX = posX + dirX;
+  posZ = posZ + dirZ;
+  if(posY == 520){
+    dirY = -dirY;
+  }
+  else if(posY == -20){
+    dirY = -dirY;
+  }
+  if(posX == 520){
+    dirX = -dirX;
+  }
+  else if(posX == -20){
+    dirX = -dirX;
+  }
+   posZ = posZ + dirZ;
+   if(posZ == -100){
+    dirZ = -dirZ;
+  }
+  else if(posZ == 100){
+    dirZ = -dirZ;
+  }
+}
